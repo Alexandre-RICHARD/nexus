@@ -1,0 +1,27 @@
+@import "@styles/index";
+
+.dropdown-container {
+  position: relative;
+  width: 0;
+  height: 0;
+
+  .select-items {
+    position: absolute;
+    background-color: $color2;
+    padding: 8px 0;
+    max-height: 250px;
+    overflow-y: auto;
+
+    .select-item {
+      width: 100%;
+      padding: 4px 13px;
+      &:hover {
+        background-color: #252525;
+      }
+
+      &:focus {
+        background-color: #1f1818;
+      }
+    }
+  }
+}
