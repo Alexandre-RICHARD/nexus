@@ -1,6 +1,7 @@
 @import "@styles/index";
 
-.dropdown-container {
+[class$="-dropdown-container"] {
+  contain: layout;
   position: relative;
   width: 0;
   height: 0;

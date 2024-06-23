@@ -2,17 +2,17 @@ import "./Dropdown.scss";
 
 import React, { useEffect } from "react";
 
-import type { SelectItems } from "../../../../types/react/selectedItems";
+import type { SelectItems } from "../../types/react/selectedItems";
 
 interface PropsTypes {
-  id: string;
+  selectorId: string;
   onClose: () => void;
   onSelect: (selectedItem: string) => void;
   items: SelectItems[];
 }
 
 export const Dropdown = ({
-  id,
+  selectorId,
   onClose,
   onSelect,
   items,
@@ -22,10 +22,14 @@ export const Dropdown = ({
     onClose();
   };
 
+  const dropddownId = `${selectorId}-dropdown-container`;
+
+  // TODO Changer la disposition pour que le dropdown apparaissent au bon endroit, à partir d'une props, left-cornder, right-corbern middle et ensuite déterminé automatiquement au dessus ou en dessous
+
   useEffect(() => {
     const handleAllClick = (event: MouseEvent) => {
-      const selector = document.querySelector(".dropdown-container");
-      const openSelectorButton = document.getElementById(id);
+      const selector = document.querySelector(`.${dropddownId}`);
+      const openSelectorButton = document.getElementById(selectorId);
       if (
         !selector?.contains(event.target as Node) &&
         !openSelectorButton?.contains(event.target as Node)
@@ -36,10 +40,10 @@ export const Dropdown = ({
 
     document.addEventListener("click", handleAllClick);
     return () => document.removeEventListener("click", handleAllClick);
-  }, [id, onClose]);
+  }, [dropddownId, selectorId, onClose]);
 
   return (
-    <div className="dropdown-container">
+    <div className={dropddownId}>
       <ul className="select-items">
         {items.map((item, index) => (
           <button

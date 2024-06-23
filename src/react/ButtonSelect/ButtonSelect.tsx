@@ -3,19 +3,19 @@ import "./ButtonSelect.scss";
 import React from "react";
 
 interface PropsTypes {
-  id: string;
+  selectorId: string;
   label: string;
   onClick: () => void;
 }
 
 export const ButtonSelect = ({
-  id,
+  selectorId,
   label,
   onClick,
 }: PropsTypes): React.ReactElement => {
   return (
     <button
-      id={id}
+      id={selectorId}
       type="button"
       className="button-select"
       onClick={onClick}

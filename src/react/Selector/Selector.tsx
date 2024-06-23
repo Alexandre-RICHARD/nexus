@@ -1,10 +1,8 @@
-import "./Selector.scss";
-
 import React, { useState } from "react";
 
-import type { SelectItems } from "../../../../types/react/selectedItems";
-import { ButtonSelect } from "../../atoms/ButtonSelect/ButtonSelect";
-import { Dropdown } from "../../atoms/Dropdown/Dropdown";
+import type { SelectItems } from "../../types/react/selectedItems";
+import { ButtonSelect } from "../ButtonSelect/ButtonSelect";
+import { Dropdown } from "../Dropdown/Dropdown";
 
 interface PropsTypes {
   id: string;
@@ -24,13 +22,14 @@ export const Selector = ({
   return (
     <div className="selector">
       <ButtonSelect
-        id={selectorId}
+        selectorId={selectorId}
+        // TODO Changer le label et rajouter icone de dropdown
         label="Fl"
         onClick={() => setIsOpen(!isOpen)}
       />
       {isOpen && (
         <Dropdown
-          id={selectorId}
+          selectorId={selectorId}
           items={items}
           onClose={() => setIsOpen(false)}
           onSelect={(item) => onSelect(item)}
