@@ -2,7 +2,7 @@ import "./Dropdown.scss";
 
 import React, { useEffect } from "react";
 
-import type { SelectItems } from "../../types/react/selectedItems";
+import type { SelectItems } from "../../../types/react/selectedItems";
 
 interface PropsTypes {
   selectorId: string;

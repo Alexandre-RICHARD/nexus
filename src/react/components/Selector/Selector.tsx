@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import type { SelectItems } from "../../types/react/selectedItems";
+import type { SelectItems } from "../../../types/react/selectedItems";
 import { ButtonSelect } from "../ButtonSelect/ButtonSelect";
 import { Dropdown } from "../Dropdown/Dropdown";
 
