@@ -4,12 +4,12 @@ import React, { useEffect } from "react";
 
 import type { SelectItems } from "../../../types/react/selectedItems";
 
-interface PropsTypes {
+type PropsTypes = {
   selectorId: string;
   onClose: () => void;
   onSelect: (selectedItem: string) => void;
   items: SelectItems[];
-}
+};
 
 export const Dropdown = ({
   selectorId,

@@ -2,11 +2,11 @@ import "./ButtonSelect.scss";
 
 import React from "react";
 
-interface PropsTypes {
+type PropsTypes = {
   selectorId: string;
   label: string;
   onClick: () => void;
-}
+};
 
 export const ButtonSelect = ({
   selectorId,

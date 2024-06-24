@@ -5,6 +5,7 @@ import { ButtonSelect } from "./react/components/ButtonSelect/ButtonSelect";
 import { Dropdown } from "./react/components/Dropdown/Dropdown";
 import { DropdownItemWithIcon } from "./react/components/DropdownItemWithIcon/DropdownItemWithIcon";
 import { Selector } from "./react/components/Selector/Selector";
+import type { FetchMethod } from "./types/fetchMethod";
 import type { SelectItems } from "./types/react/selectedItems";
 
 // React hooks
@@ -20,6 +21,6 @@ export { ButtonSelect, Dropdown, DropdownItemWithIcon, Selector };
 export { CookieHelper, ExistHelper, ImageHelper };
 
 // Types
-export type { SelectItems };
+export type { FetchMethod, SelectItems };
 
 // Enums

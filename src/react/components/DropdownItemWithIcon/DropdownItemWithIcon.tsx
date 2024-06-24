@@ -2,10 +2,10 @@ import "./DropdownItemWithIcon.scss";
 
 import React from "react";
 
-interface PropsTypes {
+type PropsTypes = {
   icon: React.ReactElement;
   label: React.ReactElement;
-}
+};
 
 export const DropdownItemWithIcon = ({
   icon,

@@ -84,6 +84,7 @@ module.exports = {
 
     // Typescript
     "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
 
     // React-refresh, default vite rules
     "react-refresh/only-export-components": [

@@ -4,11 +4,11 @@ import type { SelectItems } from "../../../types/react/selectedItems";
 import { ButtonSelect } from "../ButtonSelect/ButtonSelect";
 import { Dropdown } from "../Dropdown/Dropdown";
 
-interface PropsTypes {
+type PropsTypes = {
   id: string;
   items: SelectItems[];
   onSelect: (item: string) => void;
-}
+};
 
 export const Selector = ({
   id,
