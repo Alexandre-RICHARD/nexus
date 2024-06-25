@@ -5,6 +5,8 @@
   position: relative;
   width: 0;
   height: 0;
+  // TODO, pas du tout définitif
+  transform: translateX(-100px);
 
   .select-items {
     position: absolute;

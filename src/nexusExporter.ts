@@ -1,7 +1,9 @@
-import { nativeLanguageNames } from "./assets/translations/nativeLanguageNames";
+import { languageCode } from "./dictionnary/languageCode";
 import { languageToCountry } from "./dictionnary/languageToCountry";
+import { nativeLanguageNames } from "./dictionnary/nativeLanguageNames";
 import { CountryEnum } from "./enums/country.enum";
 import { LanguageEnum } from "./enums/language.enum";
+import { ReservedTranslationsFiles } from "./enums/reservedTranslationsFiles.enum";
 import { CookieHelper } from "./helpers/cookie.helper";
 import { ExistHelper } from "./helpers/exist.helper";
 import { ImageHelper } from "./helpers/image.helper";
@@ -26,10 +28,10 @@ export { ButtonSelect, Dropdown, DropdownItemWithIcon, Selector };
 export { CookieHelper, ExistHelper, ImageHelper };
 
 // Resources
-export { languageToCountry, nativeLanguageNames };
+export { languageCode, languageToCountry, nativeLanguageNames };
 
 // Types
 export type { FetchMethod, LanguageToCountry, SelectItems };
 
 // Enums
-export { CountryEnum, LanguageEnum };
+export { CountryEnum, LanguageEnum, ReservedTranslationsFiles };
