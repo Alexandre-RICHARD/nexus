@@ -1,10 +1,10 @@
-import type { FetchMethod } from "../types/fetchMethod";
+import type { FetchMethodTypes } from "../types/fetchMethod";
 
 export const ApiHelper = {
   fetcher: async (
     apiUrl: string,
     path: string,
-    method: FetchMethod,
+    method: FetchMethodTypes,
     body: unknown,
   ) => {
     return fetch(`${apiUrl}${path}`, {

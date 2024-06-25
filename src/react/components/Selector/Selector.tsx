@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-import type { SelectItems } from "../../../types/react/selectedItems";
+import type { SelectItemsTypes } from "../../../types/react/selectedItems";
 import { ButtonSelect } from "../ButtonSelect/ButtonSelect";
 import { Dropdown } from "../Dropdown/Dropdown";
 
 type PropsTypes = {
   id: string;
-  items: SelectItems[];
+  items: SelectItemsTypes[];
   onSelect: (item: string) => void;
 };
 

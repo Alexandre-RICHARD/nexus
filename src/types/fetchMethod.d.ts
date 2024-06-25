@@ -1,4 +1,4 @@
-export type FetchMethod =
+export type FetchMethodTypes =
   | "GET"
   | "HEAD"
   | "POST"

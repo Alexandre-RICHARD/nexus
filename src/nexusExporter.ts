@@ -1,6 +1,6 @@
-import { languageCode } from "./dictionnary/languageCode";
-import { languageToCountry } from "./dictionnary/languageToCountry";
-import { nativeLanguageNames } from "./dictionnary/nativeLanguageNames";
+import { languageCode } from "./dictionnaries/languageCode";
+import { languageToCountry } from "./dictionnaries/languageToCountry";
+import { nativeLanguageNames } from "./dictionnaries/nativeLanguageNames";
 import { CountryEnum } from "./enums/country.enum";
 import { LanguageEnum } from "./enums/language.enum";
 import { ReservedTranslationsFiles } from "./enums/reservedTranslationsFiles.enum";
@@ -11,9 +11,9 @@ import { ButtonSelect } from "./react/components/ButtonSelect/ButtonSelect";
 import { Dropdown } from "./react/components/Dropdown/Dropdown";
 import { DropdownItemWithIcon } from "./react/components/DropdownItemWithIcon/DropdownItemWithIcon";
 import { Selector } from "./react/components/Selector/Selector";
-import type { FetchMethod } from "./types/fetchMethod";
-import type { LanguageToCountry } from "./types/language";
-import type { SelectItems } from "./types/react/selectedItems";
+import type { FetchMethodTypes } from "./types/fetchMethod";
+import type { LanguageToCountryTypes } from "./types/language";
+import type { SelectItemsTypes } from "./types/react/selectedItems";
 
 // React hooks
 
@@ -31,7 +31,7 @@ export { CookieHelper, ExistHelper, ImageHelper };
 export { languageCode, languageToCountry, nativeLanguageNames };
 
 // Types
-export type { FetchMethod, LanguageToCountry, SelectItems };
+export type { FetchMethodTypes, LanguageToCountryTypes, SelectItemsTypes };
 
 // Enums
 export { CountryEnum, LanguageEnum, ReservedTranslationsFiles };

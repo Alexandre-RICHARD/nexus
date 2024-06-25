@@ -1,6 +1,6 @@
 import type React from "react";
 
-export type SelectItems = {
+export type SelectItemsTypes = {
   value: string;
   label: string | React.ReactElement;
 };
