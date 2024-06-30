@@ -1,5 +1,3 @@
-@import "@styles/index";
-
 [class$="-dropdown-container"] {
   contain: layout;
   position: relative;
@@ -10,7 +8,7 @@
 
   .select-items {
     position: absolute;
-    background-color: $color2;
+    background-color: #444444;
     padding: 8px 0;
     max-height: 250px;
     overflow-y: auto;

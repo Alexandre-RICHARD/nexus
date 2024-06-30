@@ -1,21 +1,21 @@
 import React, { createContext, useEffect, useState } from "react";
 
-import type { TranslationsObject } from "../../../../src/types/translations";
 import type { LanguageEnum } from "../../enums/language.enum";
 import { TranslationHelper } from "../../helpers/translation.helper";
+import type { Translations } from "../../types/translations";
 
 type PropTypes = {
+  filesContexts: Record<string, () => Promise<unknown>>;
   language: LanguageEnum;
   children: React.ReactElement;
 };
 
-export const TranslationsContext = createContext<
-  Record<string, TranslationsObject>
->({
-  translations: {},
+export const TranslationsContext = createContext<Translations>({
+  translations: {}, // TODO Peut-être un cast à faire
 });
 
 export const TranslationProvider = ({
+  filesContexts,
   language,
   children,
 }: PropTypes): React.ReactElement => {
@@ -25,8 +25,10 @@ export const TranslationProvider = ({
     // TODO, peut-être moyen de revenir à plus simple comme avant
     const fetchData = async () => {
       try {
-        const loadedTranslations =
-          await TranslationHelper.getTranslationsFiles(language);
+        const loadedTranslations = await TranslationHelper.getTranslationsFiles(
+          filesContexts,
+          language,
+        );
         setTranslations(loadedTranslations);
       } catch (error) {
         console.error(error);
@@ -36,7 +38,7 @@ export const TranslationProvider = ({
     fetchData()
       .then((translationsFile) => translationsFile)
       .catch((error) => console.error(error));
-  }, [language]);
+  }, [filesContexts, language]);
 
   return (
     <TranslationsContext.Provider value={translations}>

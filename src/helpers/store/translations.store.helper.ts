@@ -1,12 +1,12 @@
-import { CookieEnum } from "../../../../src/enums/cookie.enum";
 import { LanguageEnum } from "../../enums/language.enum";
 import { CookieHelper } from "../cookie.helper";
 
 export const TranslationsStoreHelper = {
-  languageInitiator: (supportedLanguages: LanguageEnum[]): LanguageEnum => {
-    let storedLanguage = CookieHelper.getCookie(
-      CookieEnum.LANG,
-    ) as LanguageEnum;
+  languageInitiator: (
+    supportedLanguages: LanguageEnum[],
+    cookieName: string,
+  ): LanguageEnum => {
+    let storedLanguage = CookieHelper.getCookie(cookieName) as LanguageEnum;
     if (
       !TranslationsStoreHelper.isSupportedLanguage(
         supportedLanguages,
@@ -14,7 +14,7 @@ export const TranslationsStoreHelper = {
       )
     ) {
       storedLanguage = LanguageEnum.ENGLISH;
-      CookieHelper.setCookie(CookieEnum.LANG, storedLanguage, 24 * 365 * 100);
+      CookieHelper.setCookie(cookieName, storedLanguage, 24 * 365 * 100);
     }
     return storedLanguage;
   },
