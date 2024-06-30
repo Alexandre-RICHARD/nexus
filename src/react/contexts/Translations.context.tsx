@@ -10,11 +10,11 @@ type PropTypes = {
   children: React.ReactElement;
 };
 
-export const TranslationsContext = createContext<Translations>({
-  translations: {}, // TODO Peut-être un cast à faire
+export const TranslationsContext = createContext<Translations<string>>({
+  translations: {},
 });
 
-export const TranslationProvider = ({
+export const TranslationProvider = <TranslationsFilesEnum extends string>({
   filesContexts,
   language,
   children,
@@ -25,10 +25,11 @@ export const TranslationProvider = ({
     // TODO, peut-être moyen de revenir à plus simple comme avant
     const fetchData = async () => {
       try {
-        const loadedTranslations = await TranslationHelper.getTranslationsFiles(
-          filesContexts,
-          language,
-        );
+        const loadedTranslations =
+          await TranslationHelper.getTranslationsFiles<TranslationsFilesEnum>(
+            filesContexts,
+            language,
+          );
         setTranslations(loadedTranslations);
       } catch (error) {
         console.error(error);

@@ -2,17 +2,12 @@ import { languageCode } from "../dictionnaries/languageCode";
 import type { LanguageEnum } from "../enums/language.enum";
 import type { Translations, TranslationsObject } from "../types/translations";
 
-export enum TranslationsFilesEnum {
-  COMMON = "common",
-  LANGUAGES = "languages",
-}
-
 export const TranslationHelper = {
-  getTranslationsFiles: async (
+  getTranslationsFiles: async <TranslationsFilesEnum>(
     filesContexts: Record<string, () => Promise<unknown>>,
     language: LanguageEnum,
-  ): Promise<Translations> => {
-    const translationsFiles = {};
+  ): Promise<Translations<TranslationsFilesEnum>> => {
+    const translationsFiles = {} as Translations<TranslationsFilesEnum>;
 
     await Promise.all(
       Object.entries(filesContexts).map(async ([filePath]) => {
@@ -29,7 +24,8 @@ export const TranslationHelper = {
 
             if (fileName) {
               // TODO Hors de question d'utiliser un type importé depuis le projet principal
-              translationsFiles[fileName] = file.default;
+              translationsFiles[fileName as TranslationsFilesEnum] =
+                file.default;
             } else {
               throw new Error(
                 "Unable to access file path to extract file name",
