@@ -1,10 +1,7 @@
-import { languageCode } from "./dictionnaries/languageCode";
 import { languageToCountry } from "./dictionnaries/languageToCountry";
 import { nativeLanguageNames } from "./dictionnaries/nativeLanguageNames";
-import { CountryEnum } from "./enums/country.enum";
 import { LanguageEnum } from "./enums/language.enum";
 import { CookieHelper } from "./helpers/cookie.helper";
-import { ExistHelper } from "./helpers/exist.helper";
 import { ImageHelper } from "./helpers/image.helper";
 import { SortHelper } from "./helpers/sort.helper";
 import { TranslationsStoreHelper } from "./helpers/store/translations.store.helper";
@@ -15,10 +12,7 @@ import { DropdownItemWithIcon } from "./react/components/DropdownItemWithIcon/Dr
 import { Selector } from "./react/components/Selector/Selector";
 import { TranslationProvider } from "./react/contexts/Translations.context";
 import { useTranslations } from "./react/hooks/useTranslations.hook";
-import type { FetchMethodTypes } from "./types/fetchMethod";
-import type { LanguageToCountryTypes } from "./types/language";
 import type { SelectItemsTypes } from "./types/react/selectedItems";
-import type { TranslationsObject } from "./types/translations";
 
 // React hooks
 export { useTranslations };
@@ -34,7 +28,6 @@ export { ButtonSelect, Dropdown, DropdownItemWithIcon, Selector };
 // Helpers
 export {
   CookieHelper,
-  ExistHelper,
   ImageHelper,
   SortHelper,
   TranslationHelper,
@@ -42,15 +35,10 @@ export {
 };
 
 // Resources
-export { languageCode, languageToCountry, nativeLanguageNames };
+export { languageToCountry, nativeLanguageNames };
 
 // Types
-export type {
-  FetchMethodTypes,
-  LanguageToCountryTypes,
-  SelectItemsTypes,
-  TranslationsObject,
-};
+export type { SelectItemsTypes };
 
 // Enums
-export { CountryEnum, LanguageEnum };
+export { LanguageEnum };
