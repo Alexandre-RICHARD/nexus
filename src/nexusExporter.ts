@@ -8,10 +8,12 @@ import { TranslationsStoreHelper } from "./helpers/store/translations.store.help
 import { TranslationHelper } from "./helpers/translation.helper";
 import { ButtonSelect } from "./react/components/ButtonSelect/ButtonSelect";
 import { Dropdown } from "./react/components/Dropdown/Dropdown";
-import { DropdownItemWithIcon } from "./react/components/DropdownItemWithIcon/DropdownItemWithIcon";
+import { IconContainer } from "./react/components/IconContainer/IconContainer";
+import { LabelWithIcon } from "./react/components/LabelWithIcon/LabelWithIcon";
 import { Selector } from "./react/components/Selector/Selector";
 import { TranslationProvider } from "./react/contexts/Translations.context";
 import { useTranslations } from "./react/hooks/useTranslations.hook";
+import { DropdownArrow } from "./react/icons/DropdownArrow";
 import type { SelectItemsTypes } from "./types/react/selectedItems";
 
 // React hooks
@@ -21,7 +23,10 @@ export { useTranslations };
 export { TranslationProvider };
 
 // React components
-export { ButtonSelect, Dropdown, DropdownItemWithIcon, Selector };
+export { ButtonSelect, Dropdown, IconContainer, LabelWithIcon, Selector };
+
+// Icons components
+export { DropdownArrow };
 
 // Functions
 
