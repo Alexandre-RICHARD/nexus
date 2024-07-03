@@ -28,7 +28,7 @@ export const Dropdown = ({
 
   useEffect(() => {
     const handleAllClick = (event: MouseEvent) => {
-      const selector = document.querySelector(`.${dropddownId}`);
+      const selector = document.getElementById(dropddownId);
       const openSelectorButton = document.getElementById(selectorId);
       if (
         !selector?.contains(event.target as Node) &&
@@ -43,7 +43,10 @@ export const Dropdown = ({
   }, [dropddownId, selectorId, onClose]);
 
   return (
-    <div className={dropddownId}>
+    <div
+      id={dropddownId}
+      className="dropdown-container"
+    >
       <ul className="select-items">
         {items.map((item, index) => (
           <button

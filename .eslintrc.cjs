@@ -71,6 +71,7 @@ module.exports = {
         unnamedComponents: "arrow-function",
       },
     ],
+    "react/require-default-props": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

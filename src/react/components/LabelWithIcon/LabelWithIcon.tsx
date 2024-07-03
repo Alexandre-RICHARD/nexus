@@ -1,4 +1,4 @@
-import "./DropdownItemWithIcon.scss";
+import "./LabelWithIcon.scss";
 
 import React from "react";
 
@@ -7,7 +7,7 @@ type PropsTypes = {
   label: React.ReactElement;
 };
 
-export const DropdownItemWithIcon = ({
+export const LabelWithIcon = ({
   icon,
   label,
 }: PropsTypes): React.ReactElement => {

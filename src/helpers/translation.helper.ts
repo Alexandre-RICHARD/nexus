@@ -23,7 +23,6 @@ export const TranslationHelper = {
             const fileName = pathSplitted[pathSplitted.length - 1].slice(0, -3);
 
             if (fileName) {
-              // TODO Hors de question d'utiliser un type importé depuis le projet principal
               translationsFiles[fileName as TranslationsFilesEnum] =
                 file.default;
             } else {

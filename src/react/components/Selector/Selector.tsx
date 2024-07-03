@@ -6,12 +6,14 @@ import { Dropdown } from "../Dropdown/Dropdown";
 
 type PropsTypes = {
   id: string;
+  label: string | React.ReactElement;
   items: SelectItemsTypes[];
   onSelect: (item: string) => void;
 };
 
 export const Selector = ({
   id,
+  label,
   items,
   onSelect,
 }: PropsTypes): React.ReactElement => {
@@ -20,11 +22,10 @@ export const Selector = ({
   const selectorId = `selector-${id}`;
 
   return (
-    <div className="selector">
+    <div>
       <ButtonSelect
         selectorId={selectorId}
-        // TODO Changer le label et rajouter icone de dropdown
-        label="Fl"
+        label={label}
         onClick={() => setIsOpen(!isOpen)}
       />
       {isOpen && (
