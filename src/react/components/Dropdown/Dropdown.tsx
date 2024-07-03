@@ -2,20 +2,25 @@ import "./Dropdown.scss";
 
 import React, { useEffect } from "react";
 
+import type { DropdownPosition } from "../../../types/react/dropdownPosition";
 import type { SelectItemsTypes } from "../../../types/react/selectedItems";
 
 type PropsTypes = {
   selectorId: string;
-  onClose: () => void;
-  onSelect: (selectedItem: string) => void;
   items: SelectItemsTypes[];
+  selectedItem: string;
+  position: DropdownPosition;
+  onSelect: (selectedItem: string) => void;
+  onClose: () => void;
 };
 
 export const Dropdown = ({
   selectorId,
-  onClose,
-  onSelect,
   items,
+  selectedItem,
+  position,
+  onSelect,
+  onClose,
 }: PropsTypes): React.ReactElement => {
   const handleChange = (event: React.MouseEvent<HTMLButtonElement>) => {
     onSelect(event.currentTarget.value);
@@ -52,7 +57,7 @@ export const Dropdown = ({
           <button
             key={item.value || index}
             type="button"
-            className="select-item"
+            className={`select-item ${selectedItem === item.value ? "selected-item" : ""}`}
             onClick={(event) => handleChange(event)}
             value={item.value}
           >

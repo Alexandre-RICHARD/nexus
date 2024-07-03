@@ -22,15 +22,14 @@ export const TranslationProvider = <TranslationsFilesEnum extends string>({
   const [translations, setTranslations] = useState({});
 
   useEffect(() => {
-    // TODO, peut-être moyen de revenir à plus simple comme avant
     const fetchData = async () => {
       try {
-        const loadedTranslations =
+        setTranslations(
           await TranslationHelper.getTranslationsFiles<TranslationsFilesEnum>(
             filesContexts,
             language,
-          );
-        setTranslations(loadedTranslations);
+          ),
+        );
       } catch (error) {
         console.error(error);
       }

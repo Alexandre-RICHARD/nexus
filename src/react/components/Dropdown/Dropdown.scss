@@ -16,12 +16,21 @@
     .select-item {
       width: 100%;
       padding: 4px 13px;
+
       &:hover {
         background-color: #252525;
       }
 
       &:focus {
         background-color: #1f1818;
+      }
+
+      &.selected-item {
+        background-color: #1b2777;
+
+        &:hover {
+          background-color: #111949;
+        }
       }
     }
   }
