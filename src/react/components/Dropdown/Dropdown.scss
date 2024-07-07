@@ -1,17 +1,10 @@
-.dropdown-container {
-  contain: layout;
-  position: relative;
-  width: 0;
-  height: 0;
-  // TODO, pas du tout définitif
-  transform: translateX(-100px);
-
   .select-items {
     position: absolute;
     background-color: #444444;
     padding: 8px 0;
     max-height: 250px;
     overflow-y: auto;
+    border-radius: 5px;
 
     .select-item {
       width: 100%;
@@ -34,4 +27,3 @@
       }
     }
   }
-}

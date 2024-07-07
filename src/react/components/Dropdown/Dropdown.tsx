@@ -1,6 +1,6 @@
 import "./Dropdown.scss";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import type { DropdownPosition } from "../../../types/react/dropdownPosition";
 import type { SelectItemsTypes } from "../../../types/react/selectedItems";
@@ -12,6 +12,14 @@ type PropsTypes = {
   position: DropdownPosition;
   onSelect: (selectedItem: string) => void;
   onClose: () => void;
+};
+
+const isTop = (position: string) => {
+  return ["top-left", "top-right"].indexOf(position) >= 0;
+};
+
+const isLeft = (position: string) => {
+  return ["bottom-left", "top-left"].indexOf(position) >= 0;
 };
 
 export const Dropdown = ({
@@ -27,44 +35,68 @@ export const Dropdown = ({
     onClose();
   };
 
-  const dropddownId = `${selectorId}-dropdown-container`;
-
-  // TODO Changer la disposition pour que le dropdown apparaissent au bon endroit, à partir d'une props, left-cornder, right-corbern middle et ensuite déterminé automatiquement au dessus ou en dessous
+  const dropdownId = `${selectorId}-dropdown-container`;
 
   useEffect(() => {
     const handleAllClick = (event: MouseEvent) => {
-      const selector = document.getElementById(dropddownId);
-      const openSelectorButton = document.getElementById(selectorId);
+      const dropdown = document.getElementById(dropdownId);
+      const selectorButton = document.getElementById(selectorId);
       if (
-        !selector?.contains(event.target as Node) &&
-        !openSelectorButton?.contains(event.target as Node)
+        !dropdown?.contains(event.target as Node) &&
+        !selectorButton?.contains(event.target as Node)
       ) {
         onClose();
       }
     };
-
     document.addEventListener("click", handleAllClick);
     return () => document.removeEventListener("click", handleAllClick);
-  }, [dropddownId, selectorId, onClose]);
+  }, [dropdownId, selectorId, onClose]);
+
+  const [selectorButtonHeight, setSelectorButtonHeight] = useState(0);
+  const [dropdownverticalPosition, setDropdownverticalPosition] =
+    useState<string>();
+  useEffect(() => {
+    const selectorButton = document.getElementById(selectorId);
+    const pageHeigth = window.innerHeight;
+    const selectorButtonScrollY = selectorButton?.getBoundingClientRect().top;
+    const size = Math.min(250, items.length * 32 + 16);
+
+    if (
+      (isTop(position) && (selectorButtonScrollY ?? 0) <= size + 15) ||
+      (!isTop(position) &&
+        pageHeigth -
+          (selectorButtonScrollY ?? 0) -
+          (selectorButton?.offsetHeight ?? 0) <=
+          size + 15)
+    ) {
+      setDropdownverticalPosition(isTop(position) ? "top" : "bottom");
+    } else {
+      setDropdownverticalPosition(isTop(position) ? "bottom" : "top");
+    }
+
+    setSelectorButtonHeight(selectorButton?.offsetHeight ?? 0);
+  }, [items, position, selectorId]);
 
   return (
-    <div
-      id={dropddownId}
-      className="dropdown-container"
+    <ul
+      id={dropdownId}
+      style={{
+        [`${dropdownverticalPosition}`]: `${selectorButtonHeight + 5}px`,
+        [isLeft(position) ? "right" : "left"]: 0,
+      }}
+      className="select-items"
     >
-      <ul className="select-items">
-        {items.map((item, index) => (
-          <button
-            key={item.value || index}
-            type="button"
-            className={`select-item ${selectedItem === item.value ? "selected-item" : ""}`}
-            onClick={(event) => handleChange(event)}
-            value={item.value}
-          >
-            {item.label}
-          </button>
-        ))}
-      </ul>
-    </div>
+      {items.map((item, index) => (
+        <button
+          key={item.value || index}
+          type="button"
+          className={`select-item ${selectedItem === item.value ? "selected-item" : ""}`}
+          onClick={(event) => handleChange(event)}
+          value={item.value}
+        >
+          {item.label}
+        </button>
+      ))}
+    </ul>
   );
 };

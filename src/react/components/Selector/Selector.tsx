@@ -1,3 +1,5 @@
+import "./Selector.scss";
+
 import React, { useState } from "react";
 
 import type { DropdownPosition } from "../../../types/react/dropdownPosition";
@@ -27,7 +29,7 @@ export const Selector = ({
   const selectorId = `selector-${id}`;
 
   return (
-    <div>
+    <div className="selector">
       <ButtonSelect
         selectorId={selectorId}
         label={label}
