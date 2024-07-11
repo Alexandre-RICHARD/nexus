@@ -3,11 +3,11 @@ import type { LanguageEnum } from "../enums/language.enum";
 import type { Translations, TranslationsObject } from "../types/translations";
 
 export const TranslationHelper = {
-  getTranslationsFiles: async <TranslationsFilesEnum>(
+  getTranslationsFiles: async (
     filesContexts: Record<string, () => Promise<unknown>>,
     language: LanguageEnum,
-  ): Promise<Translations<TranslationsFilesEnum>> => {
-    const translationsFiles = {} as Translations<TranslationsFilesEnum>;
+  ): Promise<Translations> => {
+    const translationsFiles = {} as Translations;
 
     await Promise.all(
       Object.entries(filesContexts).map(async ([filePath]) => {
@@ -23,8 +23,7 @@ export const TranslationHelper = {
             const fileName = pathSplitted[pathSplitted.length - 1].slice(0, -3);
 
             if (fileName) {
-              translationsFiles[fileName as TranslationsFilesEnum] =
-                file.default;
+              translationsFiles[fileName] = file.default;
             } else {
               throw new Error(
                 "Unable to access file path to extract file name",

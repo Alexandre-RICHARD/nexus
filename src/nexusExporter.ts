@@ -11,7 +11,8 @@ import { Dropdown } from "./react/components/Dropdown/Dropdown";
 import { IconContainer } from "./react/components/IconContainer/IconContainer";
 import { LabelWithIcon } from "./react/components/LabelWithIcon/LabelWithIcon";
 import { Selector } from "./react/components/Selector/Selector";
-import { TranslationProvider } from "./react/contexts/Translations.context";
+import { TranslationsContext } from "./react/contexts/Translations.context";
+import { TranslationProvider } from "./react/contexts/Translations.provider";
 import { useTranslations } from "./react/hooks/useTranslations.hook";
 import { DropdownArrow } from "./react/icons/DropdownArrow";
 import type { SelectItemsTypes } from "./types/react/selectedItems";
@@ -19,8 +20,11 @@ import type { SelectItemsTypes } from "./types/react/selectedItems";
 // React hooks
 export { useTranslations };
 
-// react contexts
+// React provider
 export { TranslationProvider };
+
+// React contexts
+export { TranslationsContext };
 
 // React components
 export { ButtonSelect, Dropdown, IconContainer, LabelWithIcon, Selector };
