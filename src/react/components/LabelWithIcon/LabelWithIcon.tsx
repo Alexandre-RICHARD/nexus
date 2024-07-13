@@ -11,6 +11,7 @@ export const LabelWithIcon = ({
   icon,
   label,
 }: PropsTypes): React.ReactElement => {
+  // TODO Rajouter un props de taille
   return (
     <div className="label-with-left-icon">
       <div className="icon-container">{icon}</div>

@@ -1,14 +1,12 @@
 import { useContext } from "react";
 
-import type { TranslationsFiles } from "../../types/translations";
 import { TranslationsContext } from "../contexts/Translations.context";
 
 export const useTranslations = () => {
   const translations = useContext(TranslationsContext);
-  // TODO Mettre un objet de param + tester depths
-  const t = (files: TranslationsFiles<string>, key: string): string => {
+  const Nt = (files: string, key: string): string => {
     return translations?.[files]?.[key] ?? "";
   };
 
-  return t;
+  return Nt;
 };
