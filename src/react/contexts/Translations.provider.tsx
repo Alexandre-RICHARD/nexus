@@ -1,20 +1,22 @@
 import React, { type Context, useEffect, useState } from "react";
 
-import type { LanguageEnum } from "../../enums/language.enum";
 import { TranslationHelper } from "../../helpers/translation.helper";
+import type { LanguageCodeEnum } from "../../nexusExporter";
 import type { Translations } from "../../types/translations";
+
+type PropsTypes = {
+  TranslationsContext: Context<Translations>;
+  filesContexts: Record<string, () => Promise<unknown>>;
+  language: LanguageCodeEnum;
+  children: React.ReactElement;
+};
 
 export const TranslationProvider = ({
   TranslationsContext,
   filesContexts,
   language,
   children,
-}: {
-  TranslationsContext: Context<Translations>;
-  filesContexts: Record<string, () => Promise<unknown>>;
-  language: LanguageEnum;
-  children: React.ReactElement;
-}): React.ReactElement => {
+}: PropsTypes): React.ReactElement => {
   const [translations, setTranslations] = useState<Translations>({});
 
   useEffect(() => {

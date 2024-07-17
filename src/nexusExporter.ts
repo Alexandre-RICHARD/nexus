@@ -1,8 +1,12 @@
+import { languageToCode } from "./dictionnaries/languageToCode";
 import { languageToCountry } from "./dictionnaries/languageToCountry";
 import { nativeLanguageNames } from "./dictionnaries/nativeLanguageNames";
+import { CountryEnum } from "./enums/country.enum";
 import { LanguageEnum } from "./enums/language.enum";
+import { LanguageCodeEnum } from "./enums/languageCode.enum";
 import { CookieHelper } from "./helpers/cookie.helper";
 import { ImageHelper } from "./helpers/image.helper";
+import { InvertHelper } from "./helpers/invert.helper";
 import { SortHelper } from "./helpers/sort.helper";
 import { TranslationsStoreHelper } from "./helpers/store/translations.store.helper";
 import { TranslationHelper } from "./helpers/translation.helper";
@@ -38,16 +42,17 @@ export { DropdownArrow };
 export {
   CookieHelper,
   ImageHelper,
+  InvertHelper,
   SortHelper,
   TranslationHelper,
   TranslationsStoreHelper,
 };
 
 // Resources
-export { languageToCountry, nativeLanguageNames };
+export { languageToCode, languageToCountry, nativeLanguageNames };
 
 // Types
 export type { SelectItemsTypes };
 
 // Enums
-export { LanguageEnum };
+export { CountryEnum, LanguageCodeEnum, LanguageEnum };
