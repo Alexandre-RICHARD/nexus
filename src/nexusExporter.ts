@@ -1,6 +1,6 @@
-import { languageToCode } from "./dictionnaries/languageToCode";
-import { languageToCountry } from "./dictionnaries/languageToCountry";
-import { nativeLanguageNames } from "./dictionnaries/nativeLanguageNames";
+import { languageToCode } from "./dictionnaries/languageToCode.dictionnary";
+import { languageToCountry } from "./dictionnaries/languageToCountry.dictionnary";
+import { nativeLanguageNames } from "./dictionnaries/nativeLanguageNames.dictionnary";
 import { CountryEnum } from "./enums/country.enum";
 import { LanguageEnum } from "./enums/language.enum";
 import { LanguageCodeEnum } from "./enums/languageCode.enum";

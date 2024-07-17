@@ -20,7 +20,8 @@ export const TranslationHelper = {
             const file = (await filesContexts[filePath]()) as {
               default: TranslationsObject;
             };
-            const fileName = pathSplitted[pathSplitted.length - 1].slice(0, -3);
+            const fileName =
+              pathSplitted[pathSplitted.length - 1].split(".")[0];
 
             if (fileName) {
               translationsFiles[fileName] = file.default;

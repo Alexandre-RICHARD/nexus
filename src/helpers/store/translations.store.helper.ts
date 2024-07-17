@@ -1,4 +1,4 @@
-import { languageToCode } from "../../dictionnaries/languageToCode";
+import { languageToCode } from "../../dictionnaries/languageToCode.dictionnary";
 import type { LanguageEnum } from "../../enums/language.enum";
 import type { LanguageCodeEnum } from "../../enums/languageCode.enum";
 import { CookieHelper } from "../cookie.helper";
