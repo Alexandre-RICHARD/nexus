@@ -27,8 +27,9 @@ export const ButtonSelect = ({
       <IconContainer
         size="15px"
         margin="0 0 0 6px"
+        color="#ffffff"
       >
-        <DropdownArrow color="#ffffff" />
+        <DropdownArrow />
       </IconContainer>
     </button>
   );
