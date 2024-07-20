@@ -19,7 +19,7 @@ import { TranslationsContext } from "./react/contexts/Translations.context";
 import { TranslationProvider } from "./react/contexts/Translations.provider";
 import { useTranslations } from "./react/hooks/useTranslations.hook";
 import { DropdownArrow } from "./react/icons/DropdownArrow";
-import type { SelectItemsTypes } from "./types/react/selectedItems";
+import type { SelectItemsType } from "./types/react/selectedItems";
 
 // React hooks
 export { useTranslations };
@@ -52,7 +52,7 @@ export {
 export { languageToCode, languageToCountry, nativeLanguageNames };
 
 // Types
-export type { SelectItemsTypes };
+export type { SelectItemsType };
 
 // Enums
 export { CountryEnum, LanguageCodeEnum, LanguageEnum };

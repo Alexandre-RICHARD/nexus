@@ -4,15 +4,15 @@ import React from "react";
 
 import { IconContainer } from "../IconContainer/IconContainer";
 
-type PropsTypes = {
-  icon: React.ReactElement;
-  label: React.ReactElement;
+type PropsType = {
+  icon: React.JSX.Element;
+  label: React.JSX.Element;
 };
 
 export const LabelWithIcon = ({
   icon,
   label,
-}: PropsTypes): React.ReactElement => {
+}: PropsType): React.JSX.Element => {
   return (
     <div className="label-with-left-icon">
       <IconContainer size="25px">{icon}</IconContainer>

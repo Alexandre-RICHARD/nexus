@@ -2,17 +2,17 @@ import "./Selector.scss";
 
 import React, { useState } from "react";
 
-import type { DropdownPosition } from "../../../types/react/dropdownPosition";
-import type { SelectItemsTypes } from "../../../types/react/selectedItems";
+import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
+import type { SelectItemsType } from "../../../types/react/selectedItems";
 import { ButtonSelect } from "../ButtonSelect/ButtonSelect";
 import { Dropdown } from "../Dropdown/Dropdown";
 
-type PropsTypes = {
+type PropsType = {
   id: string;
-  label: string | React.ReactElement;
-  items: SelectItemsTypes[];
+  label: string | React.JSX.Element;
+  items: SelectItemsType[];
   selectedItem: string;
-  position: DropdownPosition;
+  position: DropdownPositionType;
   onSelect: (item: string) => void;
 };
 
@@ -23,7 +23,7 @@ export const Selector = ({
   selectedItem,
   position,
   onSelect,
-}: PropsTypes): React.ReactElement => {
+}: PropsType): React.JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const selectorId = `selector-${id}`;

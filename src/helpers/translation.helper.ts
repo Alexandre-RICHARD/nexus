@@ -1,12 +1,13 @@
 import type { LanguageCodeEnum } from "../enums/languageCode.enum";
-import type { Translations, TranslationsObject } from "../types/translations";
+import type { TranslationsType } from "../types/translations";
+import type { TranslationsObjectType } from "../types/translationsObject";
 
 export const TranslationHelper = {
   getTranslationsFiles: async (
     filesContexts: Record<string, () => Promise<unknown>>,
     language: LanguageCodeEnum,
-  ): Promise<Translations> => {
-    const translationsFiles = {} as Translations;
+  ): Promise<TranslationsType> => {
+    const translationsFiles = {} as TranslationsType;
 
     await Promise.all(
       Object.entries(filesContexts).map(async ([filePath]) => {
@@ -18,7 +19,7 @@ export const TranslationHelper = {
         if (language === filePathLanguage) {
           try {
             const file = (await filesContexts[filePath]()) as {
-              default: TranslationsObject;
+              default: TranslationsObjectType;
             };
             const fileName =
               pathSplitted[pathSplitted.length - 1].split(".")[0];

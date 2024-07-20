@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-import type { Translations } from "../../types/translations";
+import type { TranslationsType } from "../../types/translations";
 
-export const TranslationsContext = createContext<Translations>({});
+export const TranslationsContext = createContext<TranslationsType>({});

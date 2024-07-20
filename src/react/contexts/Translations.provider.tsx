@@ -2,13 +2,13 @@ import React, { type Context, useEffect, useState } from "react";
 
 import { TranslationHelper } from "../../helpers/translation.helper";
 import type { LanguageCodeEnum } from "../../nexusExporter";
-import type { Translations } from "../../types/translations";
+import type { TranslationsType } from "../../types/translations";
 
-type PropsTypes = {
-  TranslationsContext: Context<Translations>;
+type PropsType = {
+  TranslationsContext: Context<TranslationsType>;
   filesContexts: Record<string, () => Promise<unknown>>;
   language: LanguageCodeEnum;
-  children: React.ReactElement;
+  children: React.JSX.Element;
 };
 
 export const TranslationProvider = ({
@@ -16,8 +16,8 @@ export const TranslationProvider = ({
   filesContexts,
   language,
   children,
-}: PropsTypes): React.ReactElement => {
-  const [translations, setTranslations] = useState<Translations>({});
+}: PropsType): React.JSX.Element => {
+  const [translations, setTranslations] = useState<TranslationsType>({});
 
   useEffect(() => {
     const fetchData = async () => {

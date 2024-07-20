@@ -1,7 +1,7 @@
 import { LanguageEnum } from "../enums/language.enum";
-import type { NativeLanguageNamesTypes } from "../types/nativeLanguagesNames";
+import type { NativeLanguageNamesType } from "../types/nativeLanguagesNames";
 
-export const nativeLanguageNames: NativeLanguageNamesTypes = {
+export const nativeLanguageNames: NativeLanguageNamesType = {
   [LanguageEnum.AFRIKAANS]: "Afrikaans",
   [LanguageEnum.ALBANIAN]: "Shqiptare",
   [LanguageEnum.AMHARIC]: "አማርኛ",

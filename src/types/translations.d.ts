@@ -1,3 +1,3 @@
-// TODO Rename file / types
-export type TranslationsObject = Record<string, string>;
-export type Translations = Record<string, TranslationsObject>;
+import type { TranslationsObjectType } from "./translationsObject";
+
+export type TranslationsType = Record<string, TranslationsObjectType>;

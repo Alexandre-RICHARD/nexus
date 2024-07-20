@@ -2,14 +2,14 @@ import "./Dropdown.scss";
 
 import React, { useEffect, useState } from "react";
 
-import type { DropdownPosition } from "../../../types/react/dropdownPosition";
-import type { SelectItemsTypes } from "../../../types/react/selectedItems";
+import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
+import type { SelectItemsType } from "../../../types/react/selectedItems";
 
-type PropsTypes = {
+type PropsType = {
   selectorId: string;
-  items: SelectItemsTypes[];
+  items: SelectItemsType[];
   selectedItem: string;
-  position: DropdownPosition;
+  position: DropdownPositionType;
   onSelect: (selectedItem: string) => void;
   onClose: () => void;
 };
@@ -29,14 +29,14 @@ export const Dropdown = ({
   position,
   onSelect,
   onClose,
-}: PropsTypes): React.ReactElement => {
+}: PropsType): React.JSX.Element => {
   const handleChange = (event: React.MouseEvent<HTMLButtonElement>) => {
     onSelect(event.currentTarget.value);
     onClose();
   };
 
   const dropdownId = `${selectorId}-dropdown-container`;
-
+  // TODO Handle key down
   useEffect(() => {
     const handleAllClick = (event: MouseEvent) => {
       const dropdown = document.getElementById(dropdownId);

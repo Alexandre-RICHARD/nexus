@@ -5,9 +5,9 @@ import React from "react";
 import { DropdownArrow } from "../../icons/DropdownArrow";
 import { IconContainer } from "../IconContainer/IconContainer";
 
-type PropsTypes = {
+type PropsType = {
   selectorId: string;
-  label: string | React.ReactElement;
+  label: string | React.JSX.Element;
   onClick: () => void;
 };
 
@@ -15,7 +15,7 @@ export const ButtonSelect = ({
   selectorId,
   label,
   onClick,
-}: PropsTypes): React.ReactElement => {
+}: PropsType): React.JSX.Element => {
   return (
     <button
       id={selectorId}

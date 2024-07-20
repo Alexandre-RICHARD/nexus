@@ -1,3 +1,3 @@
 import type { LanguageEnum } from "../enums/language.enum";
 
-export type LanguageCodeTypes = Record<LanguageEnum, string>;
+export type LanguageCodeType = Record<LanguageEnum, string>;

@@ -1,6 +1,6 @@
 import type React from "react";
 
-export type SelectItemsTypes = {
+export type SelectItemsType = {
   value: string;
-  label: string | React.ReactElement;
+  label: string | React.JSX.Element;
 };
