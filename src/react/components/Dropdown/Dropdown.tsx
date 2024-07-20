@@ -1,6 +1,6 @@
 import "./Dropdown.scss";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
 import type { SelectItemsType } from "../../../types/react/selectedItems";
@@ -30,15 +30,19 @@ export const Dropdown = ({
   onSelect,
   onClose,
 }: PropsType): React.JSX.Element => {
+  const [itemFocused, setItemFocused] = useState<number>(
+    items.findIndex((item) => item.value === selectedItem),
+  );
+
+  const dropdownId = `${selectorId}-dropdown-container`;
+
   const handleChange = (event: React.MouseEvent<HTMLButtonElement>) => {
     onSelect(event.currentTarget.value);
     onClose();
   };
 
-  const dropdownId = `${selectorId}-dropdown-container`;
-  // TODO Handle key down
-  useEffect(() => {
-    const handleAllClick = (event: MouseEvent) => {
+  const handleAllClick = useCallback(
+    (event: MouseEvent) => {
       const dropdown = document.getElementById(dropdownId);
       const selectorButton = document.getElementById(selectorId);
       if (
@@ -47,14 +51,64 @@ export const Dropdown = ({
       ) {
         onClose();
       }
-    };
+    },
+    [dropdownId, onClose, selectorId],
+  );
+
+  const setFocusOnItem = useCallback(() => {
+    const allItems = document.querySelectorAll(".select-item");
+    (allItems[itemFocused] as HTMLElement).focus();
+  }, [itemFocused]);
+
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      switch (event.key) {
+        case "ArrowUp": {
+          if (itemFocused > 0) {
+            setItemFocused(itemFocused - 1);
+            setFocusOnItem();
+          }
+          break;
+        }
+        case "ArrowDown": {
+          if (itemFocused < items.length - 1) {
+            setItemFocused(itemFocused + 1);
+            setFocusOnItem();
+          }
+          break;
+        }
+        case "Enter": {
+          onSelect(items[itemFocused].value);
+          break;
+        }
+        default:
+          break;
+      }
+    },
+    [items, itemFocused, onSelect, setFocusOnItem],
+  );
+
+  useEffect(() => {
     document.addEventListener("click", handleAllClick);
-    return () => document.removeEventListener("click", handleAllClick);
-  }, [dropdownId, selectorId, onClose]);
+    document.addEventListener("keydown", handleKeyDown);
+    setFocusOnItem();
+    return () => {
+      document.removeEventListener("click", handleAllClick);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [
+    dropdownId,
+    handleAllClick,
+    handleKeyDown,
+    onClose,
+    selectorId,
+    setFocusOnItem,
+  ]);
 
   const [selectorButtonHeight, setSelectorButtonHeight] = useState(0);
   const [dropdownverticalPosition, setDropdownverticalPosition] =
     useState<string>();
+
   useEffect(() => {
     const selectorButton = document.getElementById(selectorId);
     const pageHeigth = window.innerHeight;

@@ -11,7 +11,7 @@
       width: 100%;
       padding: 4px 13px;
 
-      &:hover {
+      &:focus, &:hover {
         background-color: #252525;
       }
 
@@ -22,7 +22,7 @@
       &.selected-item {
         background-color: #1b2777;
 
-        &:hover {
+        &:focus, &:hover {
           background-color: #111949;
         }
       }
