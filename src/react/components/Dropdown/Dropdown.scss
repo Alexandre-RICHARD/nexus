@@ -2,10 +2,20 @@
     // TODO GERER les couleurs
     position: absolute;
     background-color: #444444;
-    padding: 8px 0;
     max-height: 250px;
     overflow-y: auto;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding-block: 8px;
+    gap: 8px;
+
+    .dropdown-search-input {
+      width: 100%;
+      padding: 5px 10px;
+      background-color: #d6d6d6;
+      color: black;
+    }
 
     .select-item {
       width: 100%;

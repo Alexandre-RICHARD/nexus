@@ -2,8 +2,10 @@ import "./Dropdown.scss";
 
 import React, { useCallback, useEffect, useState } from "react";
 
+import { SearchHelper } from "../../../helpers/search.helper";
 import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
 import type { SelectItemsType } from "../../../types/react/selectedItems";
+import type { SelectSearchType } from "../../../types/react/selectSearch";
 
 type PropsType = {
   selectorId: string;
@@ -12,6 +14,7 @@ type PropsType = {
   position: DropdownPositionType;
   onSelect: (selectedItem: string) => void;
   onClose: () => void;
+  search?: SelectSearchType;
 };
 
 const isTop = (position: string) => {
@@ -29,10 +32,12 @@ export const Dropdown = ({
   position,
   onSelect,
   onClose,
+  search,
 }: PropsType): React.JSX.Element => {
   const [itemFocused, setItemFocused] = useState<number>(
     items.findIndex((item) => item.value === selectedItem),
   );
+  const [itemsSearchString, setItemsSearchString] = useState<string>("");
 
   const dropdownId = `${selectorId}-dropdown-container`;
 
@@ -140,17 +145,41 @@ export const Dropdown = ({
       }}
       className="select-items"
     >
-      {items.map((item, index) => (
-        <button
-          key={item.value || index}
-          type="button"
-          className={`select-item ${selectedItem === item.value ? "selected-item" : ""}`}
-          onClick={(event) => handleChange(event)}
-          value={item.value}
-        >
-          {item.label}
-        </button>
-      ))}
+      {search?.searchString ? (
+        <input
+          // TODO Module scss
+          className="dropdown-search-input"
+          value={search?.searchString ?? itemsSearchString}
+          onChange={(event) => {
+            const { value } = event.target;
+            if (search.searchString) {
+              search.onChangeSearch(value);
+            } else {
+              setItemsSearchString(value);
+            }
+          }}
+        />
+      ) : null}
+      <div>
+        {items
+          .filter((item) =>
+            SearchHelper.searcher(
+              search?.searchString ?? itemsSearchString,
+              item.search,
+            ),
+          )
+          .map((item, index) => (
+            <button
+              key={item.value || index}
+              type="button"
+              className={`select-item ${selectedItem === item.value ? "selected-item" : ""}`}
+              onClick={(event) => handleChange(event)}
+              value={item.value}
+            >
+              {item.label}
+            </button>
+          ))}
+      </div>
     </ul>
   );
 };

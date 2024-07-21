@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
 import type { SelectItemsType } from "../../../types/react/selectedItems";
+import type { SelectSearchType } from "../../../types/react/selectSearch";
 import { ButtonSelect } from "../ButtonSelect/ButtonSelect";
 import { Dropdown } from "../Dropdown/Dropdown";
 
@@ -14,6 +15,7 @@ type PropsType = {
   selectedItem: string;
   position: DropdownPositionType;
   onSelect: (item: string) => void;
+  search?: SelectSearchType;
 };
 
 export const Selector = ({
@@ -23,6 +25,7 @@ export const Selector = ({
   selectedItem,
   position,
   onSelect,
+  search,
 }: PropsType): React.JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -43,6 +46,7 @@ export const Selector = ({
           position={position}
           onSelect={(item) => onSelect(item)}
           onClose={() => setIsOpen(false)}
+          search={search}
         />
       )}
     </div>
