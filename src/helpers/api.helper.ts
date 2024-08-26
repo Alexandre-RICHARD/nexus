@@ -1,13 +1,12 @@
 import type { FetchMethodsType } from "../types/fetchMethods";
 
 export const ApiHelper = {
-  // TODO Confirmer les types
   fetcher: async (
     apiUrl: string,
     path: string,
     method: FetchMethodsType,
     body: unknown,
-  ): Promise<unknown> => {
+  ): Promise<Response> => {
     return fetch(`${apiUrl}${path}`, {
       headers: {
         "Accept": "application/json",
