@@ -16,7 +16,7 @@ export const TranslationsStoreHelper = {
     ] as LanguageEnum;
 
     if (
-      TranslationsStoreHelper.isSupportedLanguage(
+      !TranslationsStoreHelper.isSupportedLanguage(
         supportedLanguages,
         storedLanguageName,
       )

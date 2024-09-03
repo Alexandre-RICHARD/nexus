@@ -1,16 +1,15 @@
-import "./Dropdown.scss";
-
 import React, { useCallback, useEffect, useState } from "react";
 
 import { SearchHelper } from "../../../helpers/search.helper";
 import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
 import type { SelectItemsType } from "../../../types/react/selectedItems";
 import type { SelectSearchType } from "../../../types/react/selectSearch";
+import styles from "./Dropdown.module.scss";
 
 type PropsType = {
   selectorId: string;
   items: SelectItemsType[];
-  selectedItem: string;
+  selectedItem?: string;
   position: DropdownPositionType;
   onSelect: (selectedItem: string) => void;
   onClose: () => void;
@@ -62,7 +61,9 @@ export const Dropdown = ({
 
   const setFocusOnItem = useCallback(() => {
     const allItems = document.querySelectorAll(".select-item");
-    (allItems[itemFocused] as HTMLElement).focus();
+    if (allItems[itemFocused]) {
+      (allItems[itemFocused] as HTMLElement).focus();
+    }
   }, [itemFocused]);
 
   const handleKeyDown = useCallback(
@@ -143,12 +144,12 @@ export const Dropdown = ({
         [`${dropdownverticalPosition}`]: `${selectorButtonHeight + 5}px`,
         [isLeft(position) ? "right" : "left"]: 0,
       }}
-      className="select-items"
+      className={styles.select_items}
     >
       {search?.searchString ? (
         <input
           // TODO Module scss
-          className="dropdown-search-input"
+          className={styles.dropdown_search_input}
           value={search?.searchString ?? itemsSearchString}
           onChange={(event) => {
             const { value } = event.target;
@@ -172,7 +173,7 @@ export const Dropdown = ({
             <button
               key={item.value || index}
               type="button"
-              className={`select-item ${selectedItem === item.value ? "selected-item" : ""}`}
+              className={`${styles.select_item} ${selectedItem === item.value ? styles.selected_item : ""}`}
               onClick={(event) => handleChange(event)}
               value={item.value}
             >

@@ -1,6 +1,6 @@
-import "./IconContainer.scss";
-
 import React from "react";
+
+import styles from "./IconContainer.module.scss";
 
 type PropsType = {
   children: React.JSX.Element;
@@ -18,7 +18,7 @@ export const IconContainer = ({
   return (
     <div
       style={{ width: size, height: size, margin, fill: color }}
-      className="icon-container"
+      className={styles.icon_container}
     >
       {children}
     </div>

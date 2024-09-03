@@ -1,9 +1,8 @@
-import "./ButtonSelect.scss";
-
 import React from "react";
 
 import { DropdownArrow } from "../../icons/DropdownArrow";
 import { IconContainer } from "../IconContainer/IconContainer";
+import styles from "./ButtonSelect.module.scss";
 
 type PropsType = {
   selectorId: string;
@@ -20,7 +19,7 @@ export const ButtonSelect = ({
     <button
       id={selectorId}
       type="button"
-      className="button-select"
+      className={styles.button_select}
       onClick={onClick}
     >
       {label}

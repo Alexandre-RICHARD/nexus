@@ -1,5 +1,3 @@
-import "./Selector.scss";
-
 import React, { useState } from "react";
 
 import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
@@ -7,12 +5,13 @@ import type { SelectItemsType } from "../../../types/react/selectedItems";
 import type { SelectSearchType } from "../../../types/react/selectSearch";
 import { ButtonSelect } from "../ButtonSelect/ButtonSelect";
 import { Dropdown } from "../Dropdown/Dropdown";
+import styles from "./Selector.module.scss";
 
 type PropsType = {
   id: string;
   label: string | React.JSX.Element;
   items: SelectItemsType[];
-  selectedItem: string;
+  selectedItem?: string;
   position: DropdownPositionType;
   onSelect: (item: string) => void;
   search?: SelectSearchType;
@@ -32,7 +31,7 @@ export const Selector = ({
   const selectorId = `selector-${id}`;
 
   return (
-    <div className="selector">
+    <div className={styles.selector}>
       <ButtonSelect
         selectorId={selectorId}
         label={label}
