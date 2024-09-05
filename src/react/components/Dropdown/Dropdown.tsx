@@ -148,7 +148,6 @@ export const Dropdown = ({
     >
       {search?.searchString ? (
         <input
-          // TODO Module scss
           className={styles.dropdown_search_input}
           value={search?.searchString ?? itemsSearchString}
           onChange={(event) => {
