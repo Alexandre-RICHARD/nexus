@@ -36,7 +36,11 @@ export const Dropdown = ({
   const [itemFocused, setItemFocused] = useState<number>(
     items.findIndex((item) => item.value === selectedItem),
   );
-  const [itemsSearchString, setItemsSearchString] = useState<string>("");
+  const [defaultSearchString, setDefaultSearchString] = useState<string>("");
+
+  const [searchString, setSearchString] = search?.isHandlingCustomSearch
+    ? [search.customSearchString, search.customOnChangeSearch]
+    : [defaultSearchString, setDefaultSearchString];
 
   const dropdownId = `${selectorId}-dropdown-container`;
 
@@ -146,26 +150,22 @@ export const Dropdown = ({
       }}
       className={styles.select_items}
     >
-      {search?.searchString ? (
+      {search ? (
         <input
           className={styles.dropdown_search_input}
-          value={search?.searchString ?? itemsSearchString}
-          onChange={(event) => {
-            const { value } = event.target;
-            if (search.searchString) {
-              search.onChangeSearch(value);
-            } else {
-              setItemsSearchString(value);
-            }
-          }}
+          value={searchString}
+          onChange={(event) => setSearchString(event.target.value)}
+          // TODO TRAD
+          placeholder="Type to filter items"
         />
       ) : null}
       <div>
         {items
           .filter((item) =>
             SearchHelper.searcher(
-              search?.searchString ?? itemsSearchString,
+              searchString,
               item.search,
+              search?.strictMode,
             ),
           )
           .map((item, index) => (

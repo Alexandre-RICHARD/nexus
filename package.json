@@ -1,15 +1,13 @@
 {
   "type": "module",
   "scripts": {
-    "start": "vite --open --mode dev",
     "global-test": "pnpm clean && pnpm update && pnpm lint-fix && pnpm check-types",
     "test-unit": "vitest --mode dev",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "check-types": "tsc --noEmit",
+    "install": "pnpm i || yarn || npm i",
     "update": "pnpm update || yarn upgrade || npm update",
-    "build": "tsc && vite build --mode prod",
-    "build-preview": "vite preview --open",
     "clean": "rd /s /q build || rm -rf build",
     "clean:all": "rd /s /q build node_modules || rm -rf build node_modules"
   },

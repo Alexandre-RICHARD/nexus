@@ -1,5 +1,7 @@
 .button_select {
   // TODO GERER les couleurs
+  position: relative;
+  z-index: 9;
   background-color: #444444;
   border: 2px solid #eeeeee;
   padding: 4px 10px;
