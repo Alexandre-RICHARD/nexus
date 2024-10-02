@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./IconContainer.module.scss";
+import styles from "./styles.module.scss";
 
 type PropsType = {
   children: React.JSX.Element;
@@ -9,6 +9,7 @@ type PropsType = {
   color?: string;
 };
 
+// TODO Incorporer un icon token (car oui bonne idée) et changer le mode de rendu de ce composant
 export const IconContainer = ({
   children,
   size,

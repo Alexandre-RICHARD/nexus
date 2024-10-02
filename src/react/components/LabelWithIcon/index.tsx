@@ -1,7 +1,7 @@
 import React from "react";
 
-import { IconContainer } from "../IconContainer/IconContainer";
-import styles from "./LabelWithIcon.module.scss";
+import { IconContainer } from "../IconContainer";
+import styles from "./styles.module.scss";
 
 type PropsType = {
   icon: React.JSX.Element;

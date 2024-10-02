@@ -1,8 +1,8 @@
 import React from "react";
 
 import { DropdownArrow } from "../../icons/DropdownArrow";
-import { IconContainer } from "../IconContainer/IconContainer";
-import styles from "./ButtonSelect.module.scss";
+import { IconContainer } from "../IconContainer";
+import styles from "./styles.module.scss";
 
 type PropsType = {
   selectorId: string;

@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
 import type { SelectItemsType } from "../../../types/react/selectedItems";
 import type { SelectSearchType } from "../../../types/react/selectSearch";
-import { ButtonSelect } from "../ButtonSelect/ButtonSelect";
-import { Dropdown } from "../Dropdown/Dropdown";
-import styles from "./Selector.module.scss";
+import { ButtonSelect } from "../ButtonSelect";
+import { Dropdown } from "../Dropdown";
+import styles from "./styles.module.scss";
 
 type PropsType = {
   id: string;

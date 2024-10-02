@@ -4,7 +4,7 @@ import { SearchHelper } from "../../../helpers/search.helper";
 import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
 import type { SelectItemsType } from "../../../types/react/selectedItems";
 import type { SelectSearchType } from "../../../types/react/selectSearch";
-import styles from "./Dropdown.module.scss";
+import styles from "./styles.module.scss";
 
 type PropsType = {
   selectorId: string;
