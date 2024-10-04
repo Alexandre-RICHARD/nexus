@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { SearchHelper } from "../../../helpers/search.helper";
 import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
@@ -119,6 +119,11 @@ export const Dropdown = ({
   const [dropdownverticalPosition, setDropdownverticalPosition] =
     useState<string>();
 
+  const inputRef = useRef<null | HTMLInputElement>(null);
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
   useEffect(() => {
     const selectorButton = document.getElementById(selectorId);
     const pageHeigth = window.innerHeight;
@@ -148,10 +153,11 @@ export const Dropdown = ({
         [`${dropdownverticalPosition}`]: `${selectorButtonHeight + 5}px`,
         [isLeft(position) ? "right" : "left"]: 0,
       }}
-      className={styles.select_items}
+      className={styles.dropdown}
     >
       {search ? (
         <input
+          ref={inputRef}
           className={styles.dropdown_search_input}
           value={searchString}
           onChange={(event) => setSearchString(event.target.value)}

@@ -1,4 +1,6 @@
 .selector {
-  position: relative;
   contain: layout;
+  width: fit-content;
+  position: relative;
+  z-index: 9;
 }
