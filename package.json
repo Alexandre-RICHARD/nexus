@@ -1,13 +1,11 @@
 {
   "type": "module",
   "scripts": {
-    "global-test": "pnpm clean && pnpm update && pnpm lint-fix && pnpm check-types",
+    "global-test": "pnpm clean && pnpm lint-fix && pnpm check-types && vitest run",
     "test-unit": "vitest --mode dev",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
     "check-types": "tsc --noEmit",
-    "install": "pnpm i || yarn || npm i",
-    "update": "pnpm update || yarn upgrade || npm update",
     "clean": "rd /s /q build || rm -rf build",
     "clean:all": "rd /s /q build node_modules || rm -rf build node_modules"
   },
@@ -16,9 +14,9 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin": "^2.8.0",
+    "@stylistic/eslint-plugin": "^2.9.0",
     "@types/node": "^20.16.10",
-    "@types/react": "^18.3.10",
+    "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
@@ -27,10 +25,10 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.12",
     "eslint-plugin-simple-import-sort": "^12.1.1",
