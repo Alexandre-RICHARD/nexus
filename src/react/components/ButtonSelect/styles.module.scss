@@ -6,4 +6,11 @@
   border-radius: 5px;
   display: flex;
   align-items: center;
+
+  .selector_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+  }
 }

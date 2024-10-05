@@ -2,6 +2,11 @@
   display: flex;
   gap: 10px;
 
+  .side_image {
+    width: 25px;
+    height: 25px;
+  }
+
   .label_container {
     display: flex;
     align-items: center;

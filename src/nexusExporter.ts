@@ -1,7 +1,9 @@
+// TODO Faire que ce fichier soit en fait index.tsx, on se fout de faire un run dev
 export { languageToCode } from "./dictionnaries/languageToCode.dictionnary";
 export { languageToCountry } from "./dictionnaries/languageToCountry.dictionnary";
 export { nativeLanguageNames } from "./dictionnaries/nativeLanguageNames.dictionnary";
 export { CountryEnum } from "./enums/country.enum";
+export { IconTokenEnum } from "./enums/iconToken.enum";
 export { LanguageEnum } from "./enums/language.enum";
 export { LanguageCodeEnum } from "./enums/languageCode.enum";
 export { CookieHelper } from "./helpers/cookie.helper";
@@ -19,4 +21,5 @@ export { TranslationsContext } from "./react/contexts/Translations.context";
 export { TranslationProvider } from "./react/contexts/Translations.provider";
 export { useTranslations } from "./react/hooks/useTranslations.hook";
 export { DropdownArrow } from "./react/icons/DropdownArrow";
+export { TriangleArrow } from "./react/icons/TriangleArrow";
 export type { SelectItemsType } from "./types/react/selectedItems";

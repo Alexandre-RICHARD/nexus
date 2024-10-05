@@ -1,6 +1,6 @@
 import React from "react";
 
-import { DropdownArrow } from "../../icons/DropdownArrow";
+import { IconTokenEnum } from "../../../enums/iconToken.enum";
 import { IconContainer } from "../IconContainer";
 import styles from "./styles.module.scss";
 
@@ -22,14 +22,14 @@ export const ButtonSelect = ({
       className={styles.button_select}
       onClick={onClick}
     >
-      {label}
-      <IconContainer
-        size="15px"
-        margin="0 0 0 6px"
-        color="#ffffff"
-      >
-        <DropdownArrow />
-      </IconContainer>
+      <div className={styles.selector_content}>
+        {label}
+        <IconContainer
+          iconToken={IconTokenEnum.DropdownArrow}
+          size="15px"
+          color="#ffffff"
+        />
+      </div>
     </button>
   );
 };
