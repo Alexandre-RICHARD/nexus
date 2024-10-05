@@ -26,7 +26,7 @@ export const ButtonSelect = ({
         {label}
         <IconContainer
           iconToken={IconTokenEnum.DropdownArrow}
-          size="15px"
+          size={15}
           color="#ffffff"
         />
       </div>

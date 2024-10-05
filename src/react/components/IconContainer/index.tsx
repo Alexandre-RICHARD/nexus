@@ -5,7 +5,7 @@ import type { IconTokenEnum } from "../../../enums/iconToken.enum";
 
 type PropsType = {
   iconToken: IconTokenEnum;
-  size: string;
+  size: number;
   color?: string;
 };
 
@@ -15,5 +15,12 @@ export const IconContainer = ({
   color,
 }: PropsType): React.JSX.Element => {
   const Icon = IconsList[iconToken];
-  return <Icon style={{ color, width: size, height: size }} />;
+
+  const styles = {
+    fill: color,
+    width: `${size}px`,
+    height: `${size}px`,
+  };
+
+  return <Icon styles={styles} />;
 };

@@ -6,9 +6,7 @@ import { TriangleArrow } from "../react/icons/TriangleArrow";
 
 export const IconsList: Record<
   IconTokenEnum,
-  React.JSXElementConstructor<{
-    style: React.CSSProperties;
-  }>
+  React.JSXElementConstructor<{ styles: React.CSSProperties }>
 > = {
   [IconTokenEnum.DropdownArrow]: DropdownArrow,
   [IconTokenEnum.TriangleArrow]: TriangleArrow,
