@@ -7,17 +7,17 @@ import { ButtonSelect } from "../ButtonSelect";
 import { Dropdown } from "../Dropdown";
 import styles from "./styles.module.scss";
 
-type PropsType = {
+type PropsType<T extends string> = {
   id: string;
   label: string | React.JSX.Element;
-  items: SelectItemsType[];
-  selectedItem?: string;
+  items: SelectItemsType<T>[];
+  selectedItem?: T;
   position: DropdownPositionType;
-  onSelect: (item: string) => void;
+  onSelect: (item: T) => void;
   search?: SelectSearchType;
 };
 
-export const Selector = ({
+export const Selector = <T extends string>({
   id,
   label,
   items,
@@ -25,7 +25,7 @@ export const Selector = ({
   position,
   onSelect,
   search,
-}: PropsType): React.JSX.Element => {
+}: PropsType<T>): React.JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const selectorId = `selector-${id}`;

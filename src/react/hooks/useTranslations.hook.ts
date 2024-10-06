@@ -5,7 +5,9 @@ import { TranslationsContext } from "../contexts/Translations.context";
 export const useTranslations = () => {
   const translations = useContext(TranslationsContext);
   const Nt = (files: string, key: string): string => {
-    return translations?.[files]?.[key] ?? "";
+    const string = translations?.[files]?.[key] ?? "";
+    if (!string) return key.toLowerCase();
+    return string;
   };
 
   return Nt;

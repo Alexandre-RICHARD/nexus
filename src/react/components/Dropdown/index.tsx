@@ -6,12 +6,12 @@ import type { SelectItemsType } from "../../../types/react/selectedItems";
 import type { SelectSearchType } from "../../../types/react/selectSearch";
 import styles from "./styles.module.scss";
 
-type PropsType = {
+type PropsType<T extends string> = {
   selectorId: string;
-  items: SelectItemsType[];
-  selectedItem?: string;
+  items: SelectItemsType<T>[];
+  selectedItem?: T;
   position: DropdownPositionType;
-  onSelect: (selectedItem: string) => void;
+  onSelect: (selectedItem: T) => void;
   onClose: () => void;
   search?: SelectSearchType;
 };
@@ -24,7 +24,7 @@ const isLeft = (position: string) => {
   return ["bottom-left", "top-left"].indexOf(position) >= 0;
 };
 
-export const Dropdown = ({
+export const Dropdown = <T extends string>({
   selectorId,
   items,
   selectedItem,
@@ -32,7 +32,7 @@ export const Dropdown = ({
   onSelect,
   onClose,
   search,
-}: PropsType): React.JSX.Element => {
+}: PropsType<T>): React.JSX.Element => {
   const [itemFocused, setItemFocused] = useState<number>(
     items.findIndex((item) => item.value === selectedItem),
   );
@@ -45,7 +45,7 @@ export const Dropdown = ({
   const dropdownId = `${selectorId}-dropdown-container`;
 
   const handleChange = (event: React.MouseEvent<HTMLButtonElement>) => {
-    onSelect(event.currentTarget.value);
+    onSelect(event.currentTarget.value as T);
     onClose();
   };
 

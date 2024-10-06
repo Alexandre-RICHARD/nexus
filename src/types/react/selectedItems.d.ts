@@ -1,7 +1,7 @@
 import type React from "react";
 
-export type SelectItemsType = {
-  value: string;
+export type SelectItemsType<T extends string = string> = {
+  value: T;
   search: string;
   label: string | React.JSX.Element;
 };
