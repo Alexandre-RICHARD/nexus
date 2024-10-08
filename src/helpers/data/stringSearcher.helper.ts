@@ -1,10 +1,16 @@
 import { stringConvertor } from "./stringConvertor.helper";
 
-export const stringSearcher = (
-  searchString: string,
-  value: string,
+type Args = {
+  searchString: string;
+  value: string;
+  strictMode?: boolean;
+};
+
+export const stringSearcher = ({
+  searchString,
+  value,
   strictMode = false,
-): boolean => {
+}: Args): boolean => {
   if (strictMode) return value.includes(searchString);
   return stringConvertor(value).includes(stringConvertor(searchString));
 };

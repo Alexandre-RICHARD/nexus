@@ -2,10 +2,15 @@ import type { LanguageCodeEnum } from "../../enums/languageCode.enum";
 import type { TranslationsType } from "../../types/translations";
 import type { TranslationsObjectType } from "../../types/translationsObject";
 
-export const getTranslationsFiles = async (
-  filesContexts: Record<string, () => Promise<unknown>>,
-  language: LanguageCodeEnum,
-): Promise<TranslationsType> => {
+type Args = {
+  filesContexts: Record<string, () => Promise<unknown>>;
+  language: LanguageCodeEnum;
+};
+
+export const getTranslationsFiles = async ({
+  filesContexts,
+  language,
+}: Args): Promise<TranslationsType> => {
   const translationsFiles = {} as TranslationsType;
 
   await Promise.all(

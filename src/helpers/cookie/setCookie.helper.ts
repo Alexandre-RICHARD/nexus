@@ -1,4 +1,10 @@
-export const setCookie = (name: string, value: string, hours = 1): void => {
+type Args = {
+  name: string;
+  value: string;
+  hours: number;
+};
+
+export const setCookie = ({ name, value, hours = 1 }: Args): void => {
   let expires = "";
   if (hours) {
     const date = new Date();

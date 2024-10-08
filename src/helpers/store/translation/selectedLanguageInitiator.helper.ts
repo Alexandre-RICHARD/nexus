@@ -6,11 +6,17 @@ import { setCookie } from "../../cookie/setCookie.helper";
 import { getInvertObject } from "../../data/object/getInvertObject.helper";
 import { getIsSupportedLanguage } from "../../translation/getIsSupportedLanguage.helper";
 
-export const selectedLanguageInitiator = (
-  supportedLanguages: LanguageEnum[],
-  cookieName: string,
-  defaultLanguage: LanguageEnum,
-): LanguageCodeEnum => {
+type Args = {
+  supportedLanguages: LanguageEnum[];
+  cookieName: string;
+  defaultLanguage: LanguageEnum;
+};
+
+export const selectedLanguageInitiator = ({
+  supportedLanguages,
+  cookieName,
+  defaultLanguage,
+}: Args): LanguageCodeEnum => {
   let storedLanguage = getCookie(cookieName) as LanguageCodeEnum;
   const storedLanguageName = getInvertObject(languageToCode)[
     storedLanguage
@@ -18,7 +24,7 @@ export const selectedLanguageInitiator = (
 
   if (!getIsSupportedLanguage(supportedLanguages, storedLanguageName)) {
     storedLanguage = languageToCode[defaultLanguage] as LanguageCodeEnum;
-    setCookie(cookieName, storedLanguage, 24 * 365 * 100);
+    setCookie({ name: cookieName, value: storedLanguage, hours: 24 * 365 });
   }
   return storedLanguage;
 };

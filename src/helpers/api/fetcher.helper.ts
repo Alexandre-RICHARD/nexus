@@ -1,11 +1,18 @@
 import type { FetchMethodsType } from "../../types/fetchMethods";
 
-export const fetcher = (
-  apiUrl: string,
-  path: string,
-  method: FetchMethodsType,
-  body: unknown,
-): Promise<Response> => {
+type Args = {
+  apiUrl: string;
+  path: string;
+  method: FetchMethodsType;
+  body: unknown;
+};
+
+export const fetcher = ({
+  apiUrl,
+  path,
+  method,
+  body,
+}: Args): Promise<Response> => {
   return fetch(`${apiUrl}${path}`, {
     headers: {
       "Accept": "application/json",

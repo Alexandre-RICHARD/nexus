@@ -22,7 +22,9 @@ export const TranslationProvider = ({
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setTranslations(await getTranslationsFiles(filesContexts, language));
+        setTranslations(
+          await getTranslationsFiles({ filesContexts, language }),
+        );
       } catch (error) {
         console.error(error);
       }

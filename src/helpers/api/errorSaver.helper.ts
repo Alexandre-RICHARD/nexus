@@ -1,14 +1,26 @@
 import { fetcher } from "./fetcher.helper";
 
-export const errorSaver = async (
-  errorApiUrl: string,
-  projectName: string,
-  context: string,
-  errorMessage: string,
-): Promise<void> => {
-  await fetcher(errorApiUrl, "/error", "POST", {
-    projectName,
-    context,
-    errorMessage,
+type Args = {
+  errorApiUrl: string;
+  projectName: string;
+  context: string;
+  errorMessage: string;
+};
+
+export const errorSaver = async ({
+  errorApiUrl,
+  projectName,
+  context,
+  errorMessage,
+}: Args): Promise<void> => {
+  await fetcher({
+    apiUrl: errorApiUrl,
+    path: "/error",
+    method: "POST",
+    body: {
+      projectName,
+      context,
+      errorMessage,
+    },
   });
 };

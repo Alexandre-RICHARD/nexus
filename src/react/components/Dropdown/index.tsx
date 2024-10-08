@@ -6,6 +6,14 @@ import type { SelectItemsType } from "../../../types/react/selectedItems";
 import type { SelectSearchType } from "../../../types/react/selectSearch";
 import styles from "./styles.module.scss";
 
+const isTop = (position: string) => {
+  return ["top-left", "top-right"].indexOf(position) >= 0;
+};
+
+const isLeft = (position: string) => {
+  return ["bottom-left", "top-left"].indexOf(position) >= 0;
+};
+
 type PropsType<T extends string> = {
   selectorId: string;
   items: SelectItemsType<T>[];
@@ -14,14 +22,6 @@ type PropsType<T extends string> = {
   onSelect: (selectedItem: T) => void;
   onClose: () => void;
   search?: SelectSearchType;
-};
-
-const isTop = (position: string) => {
-  return ["top-left", "top-right"].indexOf(position) >= 0;
-};
-
-const isLeft = (position: string) => {
-  return ["bottom-left", "top-left"].indexOf(position) >= 0;
 };
 
 export const Dropdown = <T extends string>({
@@ -168,7 +168,11 @@ export const Dropdown = <T extends string>({
       <div>
         {items
           .filter((item) =>
-            stringSearcher(searchString, item.search, search?.strictMode),
+            stringSearcher({
+              searchString,
+              value: item.search,
+              strictMode: search?.strictMode,
+            }),
           )
           .map((item, index) => (
             <button

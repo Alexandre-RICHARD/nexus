@@ -31,6 +31,4 @@ export { Selector } from "./react/components/Selector";
 export { TranslationsContext } from "./react/contexts/Translations.context";
 export { TranslationProvider } from "./react/contexts/Translations.provider";
 export { useTranslations } from "./react/hooks/useTranslations.hook";
-export { DropdownArrow } from "./react/icons/DropdownArrow";
-export { TriangleArrow } from "./react/icons/TriangleArrow";
 export type { SelectItemsType } from "./types/react/selectedItems";

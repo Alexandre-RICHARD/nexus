@@ -3,6 +3,6 @@ import { setCookie } from "./setCookie.helper";
 
 export const deleteCookie = (name: string): void => {
   if (checkCookie(name)) {
-    setCookie(name, "", -1);
+    setCookie({ name, value: "", hours: -1 });
   }
 };
