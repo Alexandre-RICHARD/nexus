@@ -1,5 +1,6 @@
 import type { FetchMethodsType } from "../types/fetchMethods";
 
+// TODO Changer tous ces helpers en fonction uniques
 export const ApiHelper = {
   fetcher: async (
     apiUrl: string,

@@ -9,6 +9,7 @@ export { LanguageCodeEnum } from "./enums/languageCode.enum";
 export { CookieHelper } from "./helpers/cookie.helper";
 export { ImageHelper } from "./helpers/image.helper";
 export { InvertHelper } from "./helpers/invert.helper";
+export { roundNumberHelper } from "./helpers/round.helper";
 export { SortHelper } from "./helpers/sort.helper";
 export { TranslationsStoreHelper } from "./helpers/store/translations.store.helper";
 export { TranslationHelper } from "./helpers/translation.helper";
