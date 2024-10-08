@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
-import { SearchHelper } from "../../../helpers/search.helper";
+import { stringSearcher } from "../../../helpers/data/stringSearcher.helper";
 import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
 import type { SelectItemsType } from "../../../types/react/selectedItems";
 import type { SelectSearchType } from "../../../types/react/selectSearch";
@@ -168,11 +168,7 @@ export const Dropdown = <T extends string>({
       <div>
         {items
           .filter((item) =>
-            SearchHelper.searcher(
-              searchString,
-              item.search,
-              search?.strictMode,
-            ),
+            stringSearcher(searchString, item.search, search?.strictMode),
           )
           .map((item, index) => (
             <button

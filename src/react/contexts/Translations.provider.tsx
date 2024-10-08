@@ -1,7 +1,7 @@
 import React, { type Context, useEffect, useState } from "react";
 
 import type { LanguageCodeEnum } from "../../enums/languageCode.enum";
-import { TranslationHelper } from "../../helpers/translation.helper";
+import { getTranslationsFiles } from "../../helpers/translation/getTranslationsFiles.helper";
 import type { TranslationsType } from "../../types/translations";
 
 type PropsType = {
@@ -22,9 +22,7 @@ export const TranslationProvider = ({
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setTranslations(
-          await TranslationHelper.getTranslationsFiles(filesContexts, language),
-        );
+        setTranslations(await getTranslationsFiles(filesContexts, language));
       } catch (error) {
         console.error(error);
       }
