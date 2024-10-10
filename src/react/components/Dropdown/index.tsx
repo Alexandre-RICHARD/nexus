@@ -64,7 +64,7 @@ export const Dropdown = <T extends string>({
   );
 
   const setFocusOnItem = useCallback(() => {
-    const allItems = document.querySelectorAll(".select-item");
+    const allItems = document.querySelectorAll(".select_item");
     if (allItems[itemFocused]) {
       (allItems[itemFocused] as HTMLElement).focus();
     }
