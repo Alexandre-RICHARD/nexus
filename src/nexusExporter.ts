@@ -33,3 +33,4 @@ export { TranslationsContext } from "./react/contexts/translations/Translations.
 export { TranslationProvider } from "./react/contexts/translations/Translations.provider";
 export { useTranslations } from "./react/hooks/useTranslations.hook";
 export type { SelectItemsType } from "./types/react/selectedItems";
+export type { ThemeType } from "./types/react/theme";
