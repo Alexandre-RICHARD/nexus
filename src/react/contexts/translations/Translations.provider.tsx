@@ -1,8 +1,8 @@
 import React, { type Context, useEffect, useState } from "react";
 
-import type { LanguageCodeEnum } from "../../enums/languageCode.enum";
-import { getTranslationsFiles } from "../../helpers/translation/getTranslationsFiles.helper";
-import type { TranslationsType } from "../../types/translations";
+import type { LanguageCodeEnum } from "../../../enums/languageCode.enum";
+import { getTranslationsFiles } from "../../../helpers/translation/getTranslationsFiles.helper";
+import type { TranslationsType } from "../../../types/translations";
 
 type PropsType = {
   TranslationsContext: Context<TranslationsType>;
