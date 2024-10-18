@@ -1,7 +1,10 @@
+@use "../../../styles/index.scss";
+
 .button_select {
   // TODO GERER les couleurs, rajouter un thème en fait... et une manière de le gérer qui me convient
   background-color: #444444;
   border: 2px solid #eeeeee;
+  color: var(--theme_colorBlack);
   padding: 4px 10px;
   border-radius: 5px;
   display: flex;

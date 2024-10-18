@@ -28,6 +28,7 @@ export { Dropdown } from "./react/components/Dropdown";
 export { IconContainer } from "./react/components/IconContainer";
 export { LabelWithIcon } from "./react/components/LabelWithIcon";
 export { Selector } from "./react/components/Selector";
+export { ThemeProvider } from "./react/contexts/theme/Theme.provider";
 export { TranslationsContext } from "./react/contexts/translations/Translations.context";
 export { TranslationProvider } from "./react/contexts/translations/Translations.provider";
 export { useTranslations } from "./react/hooks/useTranslations.hook";
