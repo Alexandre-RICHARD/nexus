@@ -1,9 +1,10 @@
 import type React from "react";
 
 import { themeApplicator } from "../../../helpers/theme/themeApplicator";
+import type { ThemeType } from "../../../types/react/theme";
 
 type PropsType = {
-  theme: Record<string, string>;
+  theme: ThemeType;
   children: React.JSX.Element;
 };
 
