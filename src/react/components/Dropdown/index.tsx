@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
-import { stringSearcher } from "../../../helpers/data/stringSearcher.helper";
+import { stringSearcher } from "../../../helpers/data/string/stringSearcher.helper";
 import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
 import type { SelectItemsType } from "../../../types/react/selectedItems";
 import type { SelectSearchType } from "../../../types/react/selectSearch";
