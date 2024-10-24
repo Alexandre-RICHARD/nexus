@@ -161,7 +161,7 @@ export const Dropdown = <T extends string>({
           className={styles.dropdown_search_input}
           value={searchString}
           onChange={(event) => setSearchString(event.target.value)}
-          // TODO TRAD
+          // TODO T => TRAD
           placeholder="Type to filter items"
         />
       ) : null}
