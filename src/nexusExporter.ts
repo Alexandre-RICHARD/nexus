@@ -20,6 +20,7 @@ export { roundNumber } from "./helpers/data/number/roundNumber.helper";
 export { areStrictlyDeeplyEqualsHelper } from "./helpers/data/object/areStrictlyDeeplyEquals.helper";
 export { getInvertEnumObject } from "./helpers/data/object/getInvertEnumObject.helper";
 export { getInvertObject } from "./helpers/data/object/getInvertObject.helper";
+export { getTextSizeHelper } from "./helpers/data/string/getTextSize.helper";
 export { stringConvertor } from "./helpers/data/string/stringConvertor.helper";
 export { stringSearcher } from "./helpers/data/string/stringSearcher.helper";
 export { dynamicImageImporter } from "./helpers/media/image/dynamicImageImporter.helper";
