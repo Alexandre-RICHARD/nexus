@@ -11,7 +11,6 @@
     " === Pnpm === ": "",
     "install-dependencies": "pnpm i",
     "update-dependencies": "pnpm update",
-    "update-submodule": "git submodule update --init --recursive",
     " === Build === ": "",
     "unit-test-report": "pnpm clean && vitest run --reporter=html --coverage.enabled=true && vite preview --outDir report --open",
     "clean": "rd /s /q build report || rm -rf build report",
