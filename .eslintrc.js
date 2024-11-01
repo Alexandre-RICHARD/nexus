@@ -5,7 +5,7 @@ module.exports = {
         es2021: true,
         node: true,
     },
-    extends: [".eslintrc-client.cjs"],
+    extends: [".eslintrc-client.js"],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         project: ["./tsconfig.json", "./tsconfig.node.json"],

@@ -5,7 +5,7 @@ module.exports = {
         es2021: true,
         node: true,
     },
-    ignorePatterns: ["node_modules", "build", ".eslintrc.cjs"],
+    ignorePatterns: ["node_modules", "build", ".eslintrc.js"],
     extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended-type-checked",
