@@ -5,6 +5,7 @@ module.exports = {
         es2021: true,
         node: true,
     },
+    ignorePatterns: ["report"],
     extends: [".eslintrc-client.js"],
     parser: "@typescript-eslint/parser",
     parserOptions: {
