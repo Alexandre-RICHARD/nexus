@@ -61,7 +61,6 @@ module.exports = {
     ],
 
     // Import rules
-    "import/no-extraneous-dependencies": "off",
     "import/no-default-export": "error",
     "import/prefer-default-export": "off",
     "import/first": "error",
