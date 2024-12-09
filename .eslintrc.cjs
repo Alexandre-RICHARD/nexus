@@ -23,7 +23,7 @@ module.exports = {
         },
         {
             files: [
-                "vite.config.ts",
+                "vite.config.ts", "vitest.setup.ts",
             ],
             rules: {
                 "import/no-extraneous-dependencies": "off",

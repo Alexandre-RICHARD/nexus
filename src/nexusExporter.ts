@@ -23,7 +23,6 @@ export { getInvertObject } from "./helpers/data/object/getInvertObject.helper";
 export { getTextSizeHelper } from "./helpers/data/string/getTextSize.helper";
 export { stringConvertor } from "./helpers/data/string/stringConvertor.helper";
 export { stringSearcher } from "./helpers/data/string/stringSearcher.helper";
-export { dynamicAssetsImporterHelper as dynamicImageImporter } from "./helpers/media/image/dynamicAssetsImporter.helper";
 export { selectedLanguageInitiator } from "./helpers/store/translation/selectedLanguageInitiator.helper";
 export { getIsSupportedLanguage } from "./helpers/translation/getIsSupportedLanguage.helper";
 export { getTranslationsFiles } from "./helpers/translation/getTranslationsFiles.helper";

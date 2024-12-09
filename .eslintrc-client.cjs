@@ -8,8 +8,8 @@ module.exports = {
   ignorePatterns: ["build", "node_modules", "report", ".eslintrc.cjs"],
   extends: [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
+    "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
@@ -96,6 +96,10 @@ module.exports = {
     "@typescript-eslint/consistent-type-exports": "error",
     "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     "@typescript-eslint/no-use-before-define": "error",
+
+    // Disable old and depreciated rules
+    "@typescript-eslint/lines-between-class-members": "off",
+    "@typescript-eslint/no-throw-literal": "off",
 
     // React-refresh, default vite rules
     "react-refresh/only-export-components": [
