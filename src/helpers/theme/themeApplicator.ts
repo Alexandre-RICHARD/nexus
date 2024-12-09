@@ -1,4 +1,4 @@
-import type { ThemeType } from "../../types/react/theme";
+import type { ThemeType } from "../../nexusExporter";
 
 export const themeApplicator = (theme: ThemeType) => {
   const root = document.documentElement;

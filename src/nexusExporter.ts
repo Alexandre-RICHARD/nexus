@@ -40,6 +40,6 @@ export { TranslationsContext } from "./react/contexts/translations/Translations.
 export { TranslationProvider } from "./react/contexts/translations/Translations.provider";
 export { useLocalStorage } from "./react/hooks/useLocalStorage";
 export { useTranslations } from "./react/hooks/useTranslations.hook";
-export type { FetchResponse } from "./types/fetchResponse";
-export type { SelectItemsType } from "./types/react/selectedItems";
-export type { ThemeType } from "./types/react/theme";
+export type { FetchResponse } from "./types/fetchResponse.type";
+export type { SelectItemsType } from "./types/react/selectedItems.type";
+export type { ThemeType } from "./types/react/theme.type";

@@ -1,6 +1,6 @@
 import { LanguageEnum } from "../enums/language.enum";
 import { LanguageCodeEnum } from "../enums/languageCode.enum";
-import type { LanguageCodeType } from "../types/languageCode";
+import type { LanguageCodeType } from "../types/languageCode.type";
 
 export const languageToCode: LanguageCodeType = {
   [LanguageEnum.AFRIKAANS]: LanguageCodeEnum.AF,

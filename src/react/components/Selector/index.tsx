@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
-import type { SelectItemsType } from "../../../types/react/selectedItems";
-import type { SelectSearchType } from "../../../types/react/selectSearch";
+import type { DropdownPositionType } from "../../../types/react/dropdownPosition.type";
+import type { SelectItemsType } from "../../../types/react/selectedItems.type";
+import type { SelectSearchType } from "../../../types/react/selectSearch.type";
 import { ButtonSelect } from "../ButtonSelect";
 import { Dropdown } from "../Dropdown";
 import styles from "./styles.module.scss";

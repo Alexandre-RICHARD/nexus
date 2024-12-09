@@ -1,6 +1,6 @@
 import type { LanguageCodeEnum } from "../../enums/languageCode.enum";
-import type { TranslationsType } from "../../types/translations";
-import type { TranslationsObjectType } from "../../types/translationsObject";
+import type { TranslationsType } from "../../types/translations.type";
+import type { TranslationsObjectType } from "../../types/translationsObject.type";
 
 type Args = {
   filesContexts: Record<string, () => Promise<unknown>>;

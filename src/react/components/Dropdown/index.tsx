@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import { stringSearcher } from "../../../helpers/data/string/stringSearcher.helper";
-import type { DropdownPositionType } from "../../../types/react/dropdownPosition";
-import type { SelectItemsType } from "../../../types/react/selectedItems";
-import type { SelectSearchType } from "../../../types/react/selectSearch";
+import type { DropdownPositionType } from "../../../types/react/dropdownPosition.type";
+import type { SelectItemsType } from "../../../types/react/selectedItems.type";
+import type { SelectSearchType } from "../../../types/react/selectSearch.type";
 import styles from "./styles.module.scss";
 
 const isTop = (position: string) => {

@@ -1,6 +1,6 @@
 import { CountryEnum } from "../enums/country.enum";
 import { LanguageEnum } from "../enums/language.enum";
-import type { LanguageToCountryType } from "../types/languageToCountry";
+import type { LanguageToCountryType } from "../types/languageToCountry.type";
 
 export const languageToCountry: LanguageToCountryType = {
   [LanguageEnum.AFRIKAANS]: CountryEnum.SOUTH_AFRICA,
