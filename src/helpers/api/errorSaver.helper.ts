@@ -1,4 +1,5 @@
-import { fetcher } from "./fetcher.helper";
+import { FetchMethodsEnum } from "../../enums/fetchMethods.enum";
+import { fetcherHelper } from "./fetcher.helper";
 
 type Args = {
   errorApiUrl: string;
@@ -13,10 +14,10 @@ export const errorSaver = async ({
   context,
   errorMessage,
 }: Args): Promise<void> => {
-  await fetcher({
+  await fetcherHelper({
     apiUrl: errorApiUrl,
-    path: "/error",
-    method: "POST",
+    endPoint: "/error",
+    method: FetchMethodsEnum.POST,
     body: {
       projectName,
       context,

@@ -7,11 +7,11 @@ import type { SelectSearchType } from "../../../types/react/selectSearch";
 import styles from "./styles.module.scss";
 
 const isTop = (position: string) => {
-  return ["top-left", "top-right"].indexOf(position) >= 0;
+  return ["top-left", "top-right"].includes(position);
 };
 
 const isLeft = (position: string) => {
-  return ["bottom-left", "top-left"].indexOf(position) >= 0;
+  return ["bottom-left", "top-left"].includes(position);
 };
 
 type PropsType<T extends string> = {
