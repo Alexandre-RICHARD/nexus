@@ -24,7 +24,7 @@ module.exports = {
     },
     rules: {
         // Classic rules
-        "no-console": ["warn", {allow: ["error"]}],
+        "no-console": ["warn", { allow: ["error"] }],
 
         // Prettier rules
         "prettier/prettier": [
@@ -54,5 +54,9 @@ module.exports = {
         // Typescript
         "@typescript-eslint/consistent-type-imports": "error",
         "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+
+        // Disable old and depreciated rules
+        "@typescript-eslint/lines-between-class-members": "off",
+        "@typescript-eslint/no-throw-literal": "off",
     },
 };
